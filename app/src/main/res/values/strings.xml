@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SurveyRotation</string>
+    <string name="survey_question_text">Do you like pineapple on pizza?</string>
+    <string name="yes_button_text">Yes</string>
+    <string name="no_button_text">No</string>
+    <string name="reset_button_text">Reset</string>
+</resources>
