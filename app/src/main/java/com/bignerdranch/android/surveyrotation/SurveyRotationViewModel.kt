@@ -3,8 +3,8 @@ package com.bignerdranch.android.surveyrotation
 import androidx.lifecycle.ViewModel
 
 class SurveyRotationViewModel: ViewModel() {
-    private var yesAnswers = 0
-    private var noAnswers = 0
+    var yesAnswers = 0
+    var noAnswers = 0
 
     fun addYes() {
         yesAnswers++
