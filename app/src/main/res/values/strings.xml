@@ -8,4 +8,6 @@
     <string name="yes_survey_results_placeholder">Yes results will be shown here</string>
     <string name="no_survey_results_placeholder">No results will be shown here</string>
     <string name="results_button_text">Results</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

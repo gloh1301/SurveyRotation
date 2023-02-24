@@ -1,4 +1,4 @@
-package com.bignerdranch.android.surveyrotation
+/** package com.bignerdranch.android.surveyrotation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 
-const val EXTRA_SURVEY_RESULT = "com.bignerdranch.android.surveyrotation.SURVEY_RESULT"
-
+const val EXTRA_DID_RESET_RESULT = "com.bignerdranch.android.surveyrotation.DID_RESET_RESULT"
 class SurveyResultActivity : AppCompatActivity() {
 
     private lateinit var resetButton: Button
@@ -29,6 +28,14 @@ class SurveyResultActivity : AppCompatActivity() {
         yesSurveyResult = findViewById(R.id.yes_survey_results)
         noSurveyResult = findViewById(R.id.no_survey_results)
 
+        val yesCount = intent.getIntExtra(EXTRA_YES_SURVEY, 0)
+        val noCount = intent.getIntExtra(EXTRA_NO_SURVEY, 0)
+        surveyRotationViewModel.yesAnswers = yesCount
+        surveyRotationViewModel.noAnswers = noCount
+
+        yesSurveyResult.setText(String.format("Yes count: %d", surveyRotationViewModel.yesAnswers))
+        noSurveyResult.setText(String.format("No count: %d", surveyRotationViewModel.noAnswers))
+
         resetButton.setOnClickListener {
             resetCount()
         }
@@ -41,8 +48,12 @@ class SurveyResultActivity : AppCompatActivity() {
         surveyRotationViewModel.clearCount()
         yesSurveyResult.setText(String.format("Yes count: %d", surveyRotationViewModel.yesAnswers))
         noSurveyResult.setText(String.format("No count: %d", surveyRotationViewModel.noAnswers))
+        val resultIntent = Intent()
+        resultIntent.putExtra(EXTRA_DID_RESET_RESULT, true)
+        setResult(RESULT_OK, resultIntent)
+        finish()
     }
     private fun returnToSurvey() {
         finish()
     }
-}
+} **/
